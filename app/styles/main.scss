@@ -1,0 +1,129 @@
+//resets
+body {
+	line-height: 100vh;
+	text-align: center;
+}
+
+// colors
+$blue: #0085C7;
+$yellow: #F4C300;
+$black: #000;
+$green: #009F3D;
+$red: #DF0024;
+
+//sizes
+$size: 12em;
+
+//mixins
+@mixin shape {
+	position: relative;
+	display: inline-block;
+	width: $size;
+	height: $size;
+	border-radius: 50%;
+}
+
+@mixin inner-and-outer-borders($alignment) {
+	content: "";
+	display: block;
+	position: absolute;
+	top: $alignment;
+	left: $alignment;
+	right: $alignment;
+	bottom: $alignment;
+	border: 5px #fff solid;
+	border-radius: 50%;
+}
+
+@mixin colors($name, $color) {
+	&.#{$name} {
+		border-top: solid 1.4em $color;
+		border-left: solid 1.4em $color;
+		border-bottom: solid 1.4em $color;
+		border-right: solid 1.4em $color;
+		@include stroke;
+	}
+}
+
+@mixin stroke {
+	&:after {
+		@include inner-and-outer-borders(-0.1em);
+	}
+
+	&:before {
+		@include inner-and-outer-borders(-1.7em);
+	}
+}
+
+// Meat and Potatoes
+
+div {
+	
+	// set ring position
+	
+	&:not(:nth-child(1)) {
+		margin-left: -6em;
+	}
+
+	&:nth-child(even) {
+		top: 6em;
+	}
+	
+	// set ring stroke & size
+	
+	@include shape;
+
+	// set ring colors
+
+	@include colors(blue, $blue);
+
+	@include colors(yellow, $yellow);
+
+	@include colors(black, $black);
+
+	@include colors(green, $green);
+
+	@include colors(red, $red);
+
+}
+
+//@todo refactor
+.ring {
+
+}
+
+.mask {
+
+	// display:none;
+	
+	position: absolute;
+	left: -22px;
+	top: -22px;
+	z-index: 1;
+
+	border-top: solid 1.4em rgba(0,0,0,0) !important;
+	border-left:solid 1.4em rgba(0,0,0,0) !important;
+	border-bottom:solid 1.4em rgba(0,0,0,0) !important;
+
+	&:after {
+		border-right:solid (1.4em / 4) rgba(255,255,255,1) !important;
+		border-top: solid (1.4em / 4) rgba(0,0,0,0) !important;
+		border-left:solid (1.4em / 4) rgba(0,0,0,0) !important;
+		border-bottom:solid (1.4em / 4) rgba(0,0,0,0) !important;
+	}
+
+	&:before {
+		border-right: solid (1.4em / 4) rgba(255,255,255,1) !important;
+		border-top: solid (1.4em / 4) rgba(0,0,0,0) !important;
+		border-left:solid (1.4em / 4) rgba(0,0,0,0) !important;
+		border-bottom:solid (1.4em / 4) rgba(0,0,0,0) !important;
+	}
+
+	&.yellow {
+		transform: rotate(-55deg);
+	}
+
+	&.green {
+		transform: rotate(-55deg);	
+	}
+}
