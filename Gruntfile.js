@@ -49,7 +49,7 @@ module.exports = function (grunt) {
             },
             sass: {
                 files: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
-                tasks: ['sass:server', 'autoprefixer']
+                tasks: ['sass:server']
             },
             styles: {
                 files: ['<%= config.app %>/styles/{,*/}*.css'],
@@ -163,11 +163,26 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: '<%= config.app %>/styles',
                     src: ['*.scss'],
-                    dest: '.tmp/styles',
+                    dest: '<%= config.app %>/styles',
+                    ext: '.css'
+                }]
+            },
+            dist2: {
+                options: {
+                    style: 'expanded'
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= config.app %>/styles',
+                    src: ['*.scss'],
+                    dest: '<%= config.dist %>/styles',
                     ext: '.css'
                 }]
             },
             server: {
+                options: {
+                    style: 'expanded'
+                },
                 files: [{
                     expand: true,
                     cwd: '<%= config.app %>/styles',
@@ -390,11 +405,12 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'useminPrepare',
+        'copy:dist',
         'concurrent:dist',
         'autoprefixer',
         'concat',
         'cssmin',
-        'copy:dist',
+        
         'rev',
         'htmlmin'
     ]);
