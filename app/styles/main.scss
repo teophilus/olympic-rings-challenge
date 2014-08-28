@@ -94,8 +94,6 @@ div {
 
 .mask {
 
-	// display:none;
-
 	position: absolute;
 	left: -22px;
 	top: -22px;
@@ -105,15 +103,8 @@ div {
 	border-left:solid 1.4em rgba(0,0,0,0) !important;
 	border-bottom:solid 1.4em rgba(0,0,0,0) !important;
 
-	&:after {
+	&:after, &:before {
 		border-right:solid (1.4em / 4) rgba(255,255,255,1) !important;
-		border-top: solid (1.4em / 4) rgba(0,0,0,0) !important;
-		border-left:solid (1.4em / 4) rgba(0,0,0,0) !important;
-		border-bottom:solid (1.4em / 4) rgba(0,0,0,0) !important;
-	}
-
-	&:before {
-		border-right: solid (1.4em / 4) rgba(255,255,255,1) !important;
 		border-top: solid (1.4em / 4) rgba(0,0,0,0) !important;
 		border-left:solid (1.4em / 4) rgba(0,0,0,0) !important;
 		border-bottom:solid (1.4em / 4) rgba(0,0,0,0) !important;
