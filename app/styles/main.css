@@ -22,55 +22,11 @@ div.blue {
   border-bottom: solid 1.4em #0085c7;
   border-right: solid 1.4em #0085c7;
 }
-div.blue:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: -0.1em;
-  left: -0.1em;
-  right: -0.1em;
-  bottom: -0.1em;
-  border: 5px #fff solid;
-  border-radius: 50%;
-}
-div.blue:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: -1.7em;
-  left: -1.7em;
-  right: -1.7em;
-  bottom: -1.7em;
-  border: 5px #fff solid;
-  border-radius: 50%;
-}
 div.yellow {
   border-top: solid 1.4em #f4c300;
   border-left: solid 1.4em #f4c300;
   border-bottom: solid 1.4em #f4c300;
   border-right: solid 1.4em #f4c300;
-}
-div.yellow:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: -0.1em;
-  left: -0.1em;
-  right: -0.1em;
-  bottom: -0.1em;
-  border: 5px #fff solid;
-  border-radius: 50%;
-}
-div.yellow:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: -1.7em;
-  left: -1.7em;
-  right: -1.7em;
-  bottom: -1.7em;
-  border: 5px #fff solid;
-  border-radius: 50%;
 }
 div.black {
   border-top: solid 1.4em black;
@@ -78,55 +34,11 @@ div.black {
   border-bottom: solid 1.4em black;
   border-right: solid 1.4em black;
 }
-div.black:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: -0.1em;
-  left: -0.1em;
-  right: -0.1em;
-  bottom: -0.1em;
-  border: 5px #fff solid;
-  border-radius: 50%;
-}
-div.black:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: -1.7em;
-  left: -1.7em;
-  right: -1.7em;
-  bottom: -1.7em;
-  border: 5px #fff solid;
-  border-radius: 50%;
-}
 div.green {
   border-top: solid 1.4em #009f3d;
   border-left: solid 1.4em #009f3d;
   border-bottom: solid 1.4em #009f3d;
   border-right: solid 1.4em #009f3d;
-}
-div.green:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: -0.1em;
-  left: -0.1em;
-  right: -0.1em;
-  bottom: -0.1em;
-  border: 5px #fff solid;
-  border-radius: 50%;
-}
-div.green:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: -1.7em;
-  left: -1.7em;
-  right: -1.7em;
-  bottom: -1.7em;
-  border: 5px #fff solid;
-  border-radius: 50%;
 }
 div.red {
   border-top: solid 1.4em #df0024;
@@ -134,27 +46,27 @@ div.red {
   border-bottom: solid 1.4em #df0024;
   border-right: solid 1.4em #df0024;
 }
-div.red:after {
+
+*:after, *:before {
   content: "";
   display: block;
   position: absolute;
+  border: 5px #fff solid;
+  border-radius: 50%;
+}
+
+*:after {
   top: -0.1em;
   left: -0.1em;
   right: -0.1em;
   bottom: -0.1em;
-  border: 5px #fff solid;
-  border-radius: 50%;
 }
-div.red:before {
-  content: "";
-  display: block;
-  position: absolute;
+
+*:before {
   top: -1.7em;
   left: -1.7em;
   right: -1.7em;
   bottom: -1.7em;
-  border: 5px #fff solid;
-  border-radius: 50%;
 }
 
 .mask {

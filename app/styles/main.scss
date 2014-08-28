@@ -24,15 +24,10 @@ $size: 12em;
 }
 
 @mixin inner-and-outer-borders($alignment) {
-	content: "";
-	display: block;
-	position: absolute;
 	top: $alignment;
 	left: $alignment;
 	right: $alignment;
 	bottom: $alignment;
-	border: 5px #fff solid;
-	border-radius: 50%;
 }
 
 @mixin colors($name, $color) {
@@ -41,17 +36,6 @@ $size: 12em;
 		border-left: solid 1.4em $color;
 		border-bottom: solid 1.4em $color;
 		border-right: solid 1.4em $color;
-		@include stroke;
-	}
-}
-
-@mixin stroke {
-	&:after {
-		@include inner-and-outer-borders(-0.1em);
-	}
-
-	&:before {
-		@include inner-and-outer-borders(-1.7em);
 	}
 }
 
@@ -92,10 +76,26 @@ div {
 
 }
 
+*:after, *:before {
+	content: "";
+	display: block;
+	position: absolute;
+	border: 5px #fff solid;
+	border-radius: 50%;
+}
+
+*:after{
+	@include inner-and-outer-borders(-0.1em);
+}
+
+*:before {
+	@include inner-and-outer-borders(-1.7em);
+}
+
 .mask {
 
 	// display:none;
-	
+
 	position: absolute;
 	left: -22px;
 	top: -22px;
